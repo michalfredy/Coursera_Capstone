@@ -1,0 +1,54 @@
+DATA DESCRIPTION
+
+I'm going to use data set provided in Week 1 about collisions in Seattle (Data-Collisions.csv) and after
+checking the data there is a need to clean them and select main features used in
+the further analysis. Cleaning of data mainly consists of:
+- unification of values in columns (some used Y,N,1,0) - UNDERINFL
+- binary codification of Y/N values into 1/0
+- convert values in column to same data type (int)
+- convert INCDATE from str into Date type
+- drop NaN and empty rows in the selected features which we are going to use
+
+
+I dropped following columns because they are duplicated or irrelevant for my analysis:
+- SEVERITYDESC (long text)
+- SEVERITYCODE.1 (duplicate)
+- SDOTCOLNUM (A number given to the collision by SDOT)
+- EXCEPTRSNCODE
+- ST_COLDESC (A detailed description of the severity of the collision)
+- STATUS
+- SPEEDING (only one value Category)
+- INATTENTIONIND (only one value Category)
+- PEDROWNOTGRNT (only one value Category)
+- INCKEY
+- COLDETKEY
+- OBJECTID
+- INCDTTM (similar to INCDATE but with concrete hours - missing hour attribute in 25% of rows)
+
+I've selected following features (independent values) for prediction of dependent value SEVERITYCODE:
+- ADDRTYPE: Collision address type
+- HITPARKEDCAR: Whether or not the collision involved hitting a parked car.
+- LIGHTCOND: The light conditions during the collision.
+- WEATHER: A description of the weather conditions during the time of the collision.
+- ROADCOND: The condition of the road during the collision.
+- SDOT_COLCODE: A code provided by the state that describes the collision.
+- COLLISIONTYPE: Collision type
+- JUNCTIONTYPE: Category of junction at which collision took place
+
+Numerical data (counts):
+- PERSONCOUNT
+- VEHCOUNT
+- PEDCYLCOUNT
+
+Numerical data (keys):
+- SEGLANEKEY
+- CROSSWALKKEY
+- INTKEY
+
+Space data (coordinates):
+- X
+- Y
+
+By utilising independent values in machine learning models I will determine under
+which conditions (WEATHER, ROADCOND, LIGHTCOND, JUNCTIONTYPE, etc.) it's most likely to
+predict certain SEVERITYCODE in concrete places (SEGLANEKEY, CROSSWALKKEY, INTKEY)

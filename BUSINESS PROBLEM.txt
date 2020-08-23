@@ -1,0 +1,12 @@
+PROBLEM DESCRIPTION
+
+The main business problem is about collisions in Seattle and conditions
+causing them. Intention is to build predictive model which will provide reasonable prediction
+if under certain conditions is higher probability of collision with certain severity
+(certain places and on exact days) and which conditions are the mostly involved in collisions.
+
+Audience consists of people who lives in Seattle or travel through it and goal is to
+provide them information about current situation on a roads and possible dangers.
+
+Audience should be interested in this problem because knowing the relationships between conditions
+and likelihood of collision can save their money and life.
