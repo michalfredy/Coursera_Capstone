@@ -8,6 +8,7 @@ the further analysis. Cleaning of data mainly consists of:
 - convert values in column to same data type (int)
 - convert INCDATE from str into Date type
 - drop NaN and empty rows in the selected features which we are going to use
+- removed "Unknown" values from dataset
 
 
 I dropped following columns because they are duplicated or irrelevant for my analysis:
@@ -27,13 +28,10 @@ I dropped following columns because they are duplicated or irrelevant for my ana
 
 I've selected following features (independent values) for prediction of dependent value SEVERITYCODE:
 - ADDRTYPE: Collision address type
-- HITPARKEDCAR: Whether or not the collision involved hitting a parked car.
 - LIGHTCOND: The light conditions during the collision.
 - WEATHER: A description of the weather conditions during the time of the collision.
 - ROADCOND: The condition of the road during the collision.
-- SDOT_COLCODE: A code provided by the state that describes the collision.
-- COLLISIONTYPE: Collision type
-- JUNCTIONTYPE: Category of junction at which collision took place
+
 
 Numerical data (counts):
 - PERSONCOUNT
