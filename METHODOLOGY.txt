@@ -1,0 +1,20 @@
+I've done several Exploratory analysis, mainly consisting of:
+- check data types with df.dtypes
+- check value counts of each column in order to find NaN/Unknown values/corrupted values
+and accordingly adjusted them (e.g. filtered and used only LOCATIONs where number of Collisions
+are higher than 10)
+- use of plots such as bar charts for visualising counts of data distribution
+- use of boxplot for detecting outliers of ROAD conditions
+- use of pd.crosstab(normalize=True) for finding ratios between features
+- use LabelEncoder for creation of correlation heatmap which helps to find
+which features are interrelated (obviously WEATHER conditions are influencing ROAD conditions)
+
+Machine learning algorithms used are for solving classification problems:
+- DecisionTreeClassifier: Decision tree construction does not involve any domain knowledge or parameter setting, and therefore is appropriate for exploratory knowledge discovery.
+Decision trees can handle multidimensional data. During tree construction, attribute selection measures are used to select the attribute that best partitions the tuples into distinct classes.
+When decision trees are built, many of the branches may reflect noise or outliers in the training data. max_depth was set on 6.
+Tree pruning attempts to identify and remove such branches, with the goal of improving classification accuracy on unseen data.
+- Logistics regression: It can be used for Classification as well as for Regression problems, but mainly used for Classification problems.
+In Logistic regression, it is not required to have the linear relationship between the dependent and independent variable. Logistic Regression uses Sigmoid function.
+
+Data set was divided into training (0,7) and testing (0,3) set. 
